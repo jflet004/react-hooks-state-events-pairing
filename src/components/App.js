@@ -1,17 +1,23 @@
 import video from "../data/video.js";
+import React from "react";
+import Header from "./Header"
 
 function App() {
-  console.log("Here's your data:", video);
+  // console.log("Here's your data:", video);
+  const displayVideo = <iframe
+    width="919"
+    height="525"
+    src={video.embedUrl}
+    frameBorder="0"
+    allowFullScreen
+    title="Thinking in React"
+  />
 
   return (
     <div className="App">
-      <iframe
-        width="919"
-        height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameBorder="0"
-        allowFullScreen
-        title="Thinking in React"
+      {displayVideo}
+      <Header
+        video={video}
       />
     </div>
   );
